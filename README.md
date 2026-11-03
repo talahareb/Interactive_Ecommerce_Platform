@@ -1,62 +1,97 @@
-# THREADLAB — Interactive E-commerce Platform
+# Thread Aura — Interactive Apparel E-commerce Website
 
-A responsive, browser-based apparel storefront and customization prototype, developed from an earlier student web project. This public portfolio edition modernizes the original **T-shirt / hoodie customization, product browsing, and shopping-cart** concept while replacing unlicensed brand/product imagery with original SVG illustrations.
+**Thread Aura** is a multi-page apparel shopping website built as a student web-development project. It combines a product catalog, T-shirt and hoodie customization pages, an account interface, a shopping cart, and a cash-on-delivery checkout prototype.
+
+This repository preserves the **original website design and source code**, including its product images and customization graphics. It is a frontend demonstration rather than a deployed commercial store.
+
+## Screenshots
+
+### Homepage — Thread Aura
+
+![Original Thread Aura storefront homepage with banner, navigation, and apparel photography](screenshots/thread-aura-homepage.png)
+
+### T-shirt Customization
+
+![Original Thread Aura design page showing shirt colors, sizes, draggable designs, and upload controls](screenshots/thread-aura-customization.png)
 
 ## Features
 
-- **Product catalog:** browse six sample garments, filter by T-shirts or hoodies, and search by name.
-- **Interactive Design Studio:** Customize your shirt by selecting its style and color, adding text, graphics, or imported images, and using an intuitive drag-and-drop interface to position and arrange elements freely on your design.
-- **Artwork positioning:** drag the artwork on the garment with a mouse or touchscreen; arrow keys (and Shift+arrow keys) provide keyboard positioning.
-- **Shopping bag:** add ready-made and customized pieces, change quantities, remove items, and review a calculated total.
-- **Demo order:** simulates completion and clears the local cart. **It does not accept payment or contact information.**
-- **Responsive layouts:** designed for desktop and mobile screens, with accessible form labels and buttons.
+- **Storefront:** a homepage with a product search field, popular products, new arrivals, promotional offers, and brand sections.
+- **Product browsing:** catalog listings, product details, and product-selection interactions.
+- **Apparel customization:** dedicated T-shirt and hoodie pages with color choices, size selection, draggable design elements, and an option to upload artwork.
+- **Shopping cart:** quantity controls, item removal, totals, and local shopping-cart state.
+- **Account prototype:** signup and login forms with browser-based storage.
+- **Checkout prototype:** address entry, shipping calculations, a cash-on-delivery option, and a locally generated order JSON file.
 
-## Technology
+The functionality above describes the original coursework source. Some interactions may require bug fixes or further testing; none of these features should be treated as secure production e-commerce infrastructure.
 
-- HTML5, CSS3, vanilla JavaScript (ES modules)
-- SVG-based original garment and artwork illustrations
-- Browser `localStorage` for local cart persistence
-- Node.js built-in static server (`node:http`) for development — **no npm dependencies**
-- Native Node.js test runner (`node --test`)
+## Technologies
 
-## Run locally
+- **HTML5** for markup and site structure
+- **CSS3** for styling and layout
+- **JavaScript** for catalog interactions, product customization, accounts, cart, and checkout
+- **Browser `localStorage`** for prototype account/cart persistence
+- External Google Fonts / Font Awesome resources on applicable pages
 
-Requires **Node.js 20+**. No database, npm install, or third-party API credentials are needed.
+No server-side order processing, database, or real payment gateway is included.
 
-```bash
-npm start
-```
-
-Open **http://127.0.0.1:3000** in your browser. Start from `index.html`. Press `Ctrl+C` to stop the server.
-
-Or run `python -m http.server 8000` from the repository folder and visit **http://localhost:8000**.
-
-## Tests
-
-```bash
-npm test
-```
-
-The tests exercise catalog validity, input normalization, correct pricing, HTML escaping, cart persistence, and SVG generation. Browser smoke tests were also performed during packaging.
-
-## Project structure
+## Original Project Structure
 
 ```text
-Interactive-Ecommerce-Platform/
-├── index.html             # Storefront and product filtering
-├── customize.html         # Interactive custom apparel studio
-├── cart.html              # Local shopping bag and demo order
-├── styles.css             # Responsive styles
-├── src/
-│   ├── core.js            # Catalog, SVG art, validation, storage helpers
-│   ├── main.js            # Product catalog interactions
-│   ├── customize.js       # Color, graphic, text and position controls
-│   └── cart.js            # Cart rendering and simulated checkout
-├── tests/
-│   └── core.test.mjs      # Automated unit tests
-├── server.mjs             # Local static development server
-├── package.json
+Thread-Aura/
+├── index.html                # Original homepage (entry point)
+├── homestyle.css             # Homepage styles
+├── home.js                   # Homepage product displays
+├── products.html             # Product catalog
+├── products.js               # Catalog behavior
+├── productstyle.css
+├── product-details.html      # Product details
+├── product-details.js
+├── page1.html                # Choose T-shirt or hoodie
+├── Tpage.html                # T-shirt customization
+├── Hpage.html                # Hoodie customization
+├── account.html              # Account UI
+├── accountscript.js
+├── accountstyle.css
+├── cart.html                 # Shopping cart
+├── cart.js                   # Cart and checkout logic
+├── cartstyle.css
+├── checkOut.html             # Cash-on-delivery checkout prototype
+├── styles.css                # Checkout styling
+├── assets/                   # Original product photos and designs
+├── screenshots/              # Screenshots added for documentation
+│   ├── thread-aura-homepage.png
+│   └── thread-aura-customization.png
 └── README.md
 ```
 
+Additional original files such as `Tpage.html`, `Hpage.html`, `page1.html`, and the JSON placeholders are retained without code changes.
 
+## Running Locally
+
+1. Clone or download this repository.
+2. Open **`index.html`** in a web browser.
+3. Use **Design your own shirt** to choose between the T-shirt and hoodie customization pages.
+4. Use the Products, Account, and cart links to explore the other sections.
+
+For a local development server (optional), from the repository root run:
+
+```bash
+python -m http.server 8000
+```
+
+Then visit <http://localhost:8000/>.
+
+The original site loads some fonts/icons from the internet. Its features were written for a browser and have not been verified as a fully working deployed store.
+
+## Scope and Important Limitations
+
+- **Educational prototype:** registration/login is implemented in the browser, not with secure server-side authentication. Never use a real password, real customer data, or actual delivery information when testing.
+- **No actual orders:** checkout creates a downloadable JSON representation of an order; it does not submit purchases to a backend or accept real payment.
+- **Original asset rights:** the original files include third-party product, brand, and apparel imagery. Permission or appropriate licensing may be needed before redistributing the imagery publicly.
+- **Original behavior preserved:** this archive intentionally does not refactor the HTML, CSS, JavaScript, or artwork. Some references may be case-sensitive or outdated on non-Windows systems.
+- **Collaboration:** add the names and contributions of the original project collaborators where applicable before public publication.
+
+## About This Repository
+
+This archive presents the **original Thread Aura coursework website** as a portfolio project. The README and two screenshots were added for documentation; the original source files and image assets have not been rewritten or replaced.
