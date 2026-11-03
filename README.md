@@ -2,8 +2,6 @@
 
 A responsive, browser-based apparel storefront and customization prototype, developed from an earlier student web project. This public portfolio edition modernizes the original **T-shirt / hoodie customization, product browsing, and shopping-cart** concept while replacing unlicensed brand/product imagery with original SVG illustrations.
 
-> **Portfolio demonstration only.** This is not a real store. There are no real user accounts, payments, deliveries, or backend orders. Prices and the checkout flow are simulated.
-
 ## Features
 
 - **Product catalog:** browse six sample garments, filter by T-shirts or hoodies, and search by name.
