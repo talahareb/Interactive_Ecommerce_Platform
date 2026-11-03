@@ -82,16 +82,5 @@ python -m http.server 8000
 
 Then visit <http://localhost:8000/>.
 
-The original site loads some fonts/icons from the internet. Its features were written for a browser and have not been verified as a fully working deployed store.
 
-## Scope and Important Limitations
 
-- **Educational prototype:** registration/login is implemented in the browser, not with secure server-side authentication. Never use a real password, real customer data, or actual delivery information when testing.
-- **No actual orders:** checkout creates a downloadable JSON representation of an order; it does not submit purchases to a backend or accept real payment.
-- **Original asset rights:** the original files include third-party product, brand, and apparel imagery. Permission or appropriate licensing may be needed before redistributing the imagery publicly.
-- **Original behavior preserved:** this archive intentionally does not refactor the HTML, CSS, JavaScript, or artwork. Some references may be case-sensitive or outdated on non-Windows systems.
-- **Collaboration:** add the names and contributions of the original project collaborators where applicable before public publication.
-
-## About This Repository
-
-This archive presents the **original Thread Aura coursework website** as a portfolio project. The README and two screenshots were added for documentation; the original source files and image assets have not been rewritten or replaced.
