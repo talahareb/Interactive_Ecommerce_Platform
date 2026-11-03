@@ -1,0 +1,12 @@
+{
+  "name": "interactive-ecommerce-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-free interactive apparel storefront and customization demo",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" }
+}
