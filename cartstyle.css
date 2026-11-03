@@ -1,0 +1,155 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eef5ff;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigation bar */
+header {
+  background: #176b87;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background: #86b6f6;
+}
+
+#cart-container {
+  width: 100%;
+  margin: 20px auto;
+}
+
+#cart-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#cart-container th,
+#cart-container td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+#cart-container th {
+  background-color: #eef5ff;
+  color: #333;
+}
+
+#cart-container td img {
+  max-width: 50px;
+  height: auto;
+}
+
+/* Style for the quantity input */
+#cart-container .quantity-input {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Style for the remove button */
+#cart-container .remove-btn {
+  background-color: #176b87;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#cart-container .remove-btn:hover {
+  background-color: #86b6f6;
+}
+
+/* Style for the cart-summary */
+.cart-summary {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #eef5ff;
+  text-align: center;
+}
+
+.cart-summary p {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.cart-summary button {
+  background-color: #176b87;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-summary button:hover {
+  background-color: #86b6f6;
+}
+#search-bar {
+  padding: 8px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+}
+
+#search-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #86b6f6;
+  color: #fff;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background-color: #b4d4ff;
+}

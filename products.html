@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Shopping website</title>
+    <link rel="stylesheet" type="text/css" href="productstyle.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"> 
+                    <img src="assets/logo.jpg" alt="Logo" width="200px" height="75px">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="cart.html"><img src="assets/cart.png" width="30px" height="30px"></a></li>
+                <li>
+                    <input type="text" id="search-bar" placeholder="Search products...">
+                    <button id="search-btn">Search</button>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+    
+    <div class="sidebar">
+        <h3>Filter by</h3>
+        <label for="price-range">Price Range:</label>
+        <div>
+            <span id="min-price">0</span>
+            <input type="range" id="price-range" name="price-range" min="0" max="150">
+            <span id="max-price">150</span>
+        </div>
+        <div>Selected Price: $<span id="selected-price">0</span></div>
+        <button id="filter-price-btn">Filter</button>
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="all">All</option>
+            <option value="Unisex Tshirts">Unisex Tshirts</option>
+            <option value="Tshirts for men">Tshirts for men</option>
+            <option value="Tshirts for women">Tshirts for women</option>
+			<option value="Unisex Hoodies">Unisex Hoodies</option>
+            <option value="Hoodies for men">Hoodies for men</option>
+            <option value="Hoodies for women">Hoodies for women</option>
+        </select>
+        <button id="filter-category-btn">Filter</button>
+    </div>
+
+    <div class="container">
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <select id="sort-products">
+                <option value="default">Default</option>
+                <option value="price-asc">Sort by price: low to high</option>
+                <option value="price-desc">Sort by price: high to low</option>
+                <option value="name-asc">Sort by name: A to Z</option>
+                <option value="name-desc">Sort by name: Z to A</option>
+				<option value="rating-asc">Sort by rating: low to high</option>
+                <option value="rating-desc">Sort by rating: high to low</option>
+            </select>
+        </div>
+        <div class="row" id="product-list">
+            <!-- Products will be inserted here by JavaScript -->
+        </div>
+		<div class="pagination">
+			<button id="prev-page" class="pagination-btn">Previous</button>
+			<span id="page-info">Page 1</span>
+			<button id="next-page" class="pagination-btn">Next</button>
+		</div>
+    </div>
+    <footer class="footer">
+        <div class="container-foot">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="assets/play-store.png" alt="Play Store">
+                        <img src="assets/app-store.png" alt="App Store">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="assets/logo.jpg" alt="Logo" width="200px" height="75px">
+                    <p>Stand out with your unique creations and make a statement every day.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2024 - threadAura</p>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+</body>
+</html>

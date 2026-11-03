@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tshirts</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      h1 {
+        text-align: center;
+        text-shadow: #b4d4ff 2px 2px 10px;
+        padding-top: 8px;
+      }
+      .container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      .Tshirt-container {
+        position: relative;
+        width: 350px;
+        margin-top: 5%;
+      }
+      img.Tshirt {
+        width: 100%;
+        display: block;
+      }
+      .box {
+        width: 350px;
+        margin-top: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .choose-color,
+      .choose-size {
+        margin-bottom: 10px;
+      }
+      .color-palette {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .color-circle,
+      .color-circle-white {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 5px;
+        cursor: pointer;
+      }
+      .color-circle-white {
+        width: 19px;
+        height: 19px;
+        border: 1px solid black;
+        background-color: white;
+      }
+      .elements {
+        width: 350px;
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+      .elements img {
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        margin: 5px;
+        position: relative;
+      }
+      .draggable {
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        margin: 5px;
+        position: absolute;
+      }
+      .cart {
+        background-color: #86b6f6;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .cart:hover {
+        background-color: #176b87;
+        transform: scale(1.05);
+      }
+      .size-btn {
+        background-color: #86b6f6;
+        border: none;
+        color: white;
+        padding: 8px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 10px 2px;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .size-btn:hover {
+        background-color: #176b87;
+        transform: scale(1.05);
+      }
+      .size-btn:active,
+      .size-btn:focus {
+        background-color: #176b87;
+        transform: scale(0.95);
+        outline: none;
+      }
+      .size-btn.active {
+        background-color: #176b87;
+        transform: scale(1.05);
+      }
+
+      input[type="file"] {
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #86b6f6;
+        color: #fff;
+        border: none;
+        padding: 7px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      button:hover {
+        background-color: #176b87;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="Tshirt-container">
+        <img
+          class="Tshirt"
+          src="assets/blackH.png"
+          alt="Black Tshirt"
+          id="tshirt"
+        />
+      </div>
+      <div class="box">
+        <h2 class="choose-color">Choose Your Color</h2>
+        <div class="color-palette">
+          <div
+            class="color-circle"
+            style="background-color: dimgray"
+            onclick="changeTshirt('darkgreyH')"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: black"
+            onclick="changeTshirt('blackH')"
+          ></div>
+          <div
+            class="color-circle-white"
+            style="background-color: white"
+            onclick="changeTshirt('whiteH')"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: bisque"
+            onclick="changeTshirt('beigeH')"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: midnightblue"
+            onclick="changeTshirt('naxyH')"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: blue"
+            onclick="changeTshirt('blueH')"
+          ></div>
+
+          <div
+            class="color-circle"
+            style="background-color: red"
+            onclick="changeTshirt('redH')"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: darkgrey"
+            onclick="changeTshirt('greyH')"
+          ></div>
+        </div>
+        <h2 class="choose-size">Choose Your Size</h2>
+        <div class="size-options">
+          <button class="size-btn">XS</button>
+          <button class="size-btn">S</button>
+          <button class="size-btn">M</button>
+          <button class="size-btn">L</button>
+          <button class="size-btn">XL</button>
+        </div>
+        <h2 class="choose-size">Drag Your Design</h2>
+        <div class="elements" id="elements"></div>
+
+        <h2>Upload Your Design</h2>
+        <form
+          id="uploadForm"
+          action="#"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input
+            type="file"
+            id="imageUpload"
+            name="imageUpload"
+            accept="image/*"
+            multiple
+            required
+          />
+          <button type="button" id="uploadButton">Upload</button>
+        </form>
+        <h2>Price</h2>
+        <p id="price">$10</p>
+        <form id="addToCartForm" action="cart.html" method="post">
+          <input type="hidden" name="tshirtColor" id="tshirtColorInput" />
+          <input type="hidden" name="tshirtSize" id="tshirtSizeInput" />
+        </form>
+        <button type="submit" class="cart">Add to cart</button>
+      </div>
+    </div>
+
+    <script>
+      function changeTshirt(color) {
+        const Timg = document.querySelector(".Tshirt");
+        Timg.src = `assets/${color}.png`;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("elements");
+        const imageUpload = document.getElementById("imageUpload");
+        const uploadButton = document.getElementById("uploadButton");
+        const addToCartBtn = document.querySelector(".cart");
+        const tshirtColorInput = document.getElementById("tshirtColorInput");
+        const tshirtSizeInput = document.getElementById("tshirtSizeInput");
+
+        // Function to calculate and update the price
+        function updatePrice() {
+          const basePrice = 20;
+          const designPrice = 5;
+          const designCount = document.querySelectorAll(
+            ".Tshirt-container .draggable"
+          ).length;
+          const totalPrice = basePrice + designCount * designPrice;
+          document.getElementById("price").textContent = `$${totalPrice.toFixed(
+            2
+          )}`;
+        }
+
+        // Create draggable images and update price
+        function createDraggableImage(src, id) {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = "Design";
+          img.classList.add("draggable");
+          img.draggable = true;
+          img.id = id;
+          img.addEventListener("dragstart", dragStart);
+          img.addEventListener("dragend", updatePrice);
+          container.appendChild(img);
+          updatePrice();
+        }
+
+        // Handle file uploads
+        uploadButton.addEventListener("click", function () {
+          const files = imageUpload.files;
+          if (files.length === 0) return;
+
+          Array.from(files).forEach((file) => {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              createDraggableImage(e.target.result, `uploaded-${Date.now()}`);
+            };
+            reader.readAsDataURL(file);
+          });
+
+          imageUpload.value = "";
+        });
+
+        function dragStart(event) {
+          event.dataTransfer.setData("text/plain", event.target.id);
+        }
+
+        function dragOver(event) {
+          event.preventDefault();
+        }
+
+        function drop(event) {
+          event.preventDefault();
+          const id = event.dataTransfer.getData("text/plain");
+          const draggable = document.getElementById(id);
+          const rect = tshirt.getBoundingClientRect();
+          const containerRect = tshirtContainer.getBoundingClientRect();
+          const draggableWidth = draggable.offsetWidth;
+          const draggableHeight = draggable.offsetHeight;
+          let left = event.clientX - containerRect.left - draggableWidth / 2;
+          let top = event.clientY - containerRect.top - draggableHeight / 2;
+
+          // Ensure design stays within T-shirt bounds
+          if (left < 0) left = 0;
+          if (top < 0) top = 0;
+          if (left + draggableWidth > rect.width)
+            left = rect.width - draggableWidth;
+          if (top + draggableHeight > rect.height)
+            top = rect.height - draggableHeight;
+
+          draggable.style.left = `${left}px`;
+          draggable.style.top = `${top}px`;
+          tshirtContainer.appendChild(draggable);
+
+          updatePrice();
+        }
+
+        // Attach event listeners for drag and drop
+        const tshirtContainer = document.querySelector(".Tshirt-container");
+        const tshirt = document.querySelector(".Tshirt");
+        tshirtContainer.addEventListener("dragover", dragOver);
+        tshirtContainer.addEventListener("drop", drop);
+
+        addToCartBtn.addEventListener("click", function () {
+          const selectedSize = document.querySelector(".size-btn.active");
+          if (!selectedSize) {
+            alert("Please select a size before adding to cart!");
+            return; // Prevents further code execution, keeping the user on the same page
+          }
+
+          // Get selected T-shirt color and designs
+          const selectedColor = getTshirtColor();
+          const designs = getTshirtDesigns();
+
+          // Update cart in localStorage
+          addToCart(selectedColor, selectedSize.textContent, designs);
+
+          alert("Item added to cart!");
+
+          // Redirect to the cart page after a short delay
+          setTimeout(function () {
+            window.location.href = "cart.html";
+          }, 500); // Delay in milliseconds (adjust as needed)
+        });
+
+        function getTshirtColor() {
+          const tshirtImg = document.querySelector(".Tshirt");
+          if (tshirtImg) {
+            const src = tshirtImg.src;
+            const regex = /assets\/(.+?)\.png$/;
+            const match = src.match(regex);
+            if (match) {
+              return match[1];
+            }
+          }
+          return "black"; // Default color if not found
+        }
+
+        function getTshirtDesigns() {
+          const designs = document.querySelectorAll(
+            ".Tshirt-container .draggable"
+          );
+          return Array.from(designs).map((design) => ({
+            src: design.src,
+            left: design.style.left,
+            top: design.style.top,
+            width: design.style.width || "80px",
+            height: design.style.height || "80px",
+          }));
+        }
+
+        function addToCart(color, size, designs) {
+          let carts = JSON.parse(localStorage.getItem("carts")) || {};
+          const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+          if (!loggedInUser) {
+            alert("You need to be logged in to add items to the cart.");
+            return;
+          }
+          const userEmail = loggedInUser.email;
+
+          const newItem = {
+            id: Date.now(),
+            name: `T-shirt (${color}, ${size})`,
+            image: `assets/${color}.png`,
+            size: size,
+            quantity: 1,
+            price: parseFloat(
+              document.getElementById("price").textContent.replace("$", "")
+            ),
+            designs: designs,
+          };
+
+          if (!carts[userEmail]) {
+            carts[userEmail] = [];
+          }
+          carts[userEmail].push(newItem);
+          localStorage.setItem("carts", JSON.stringify(carts));
+
+          console.log(
+            "Cart Contents:",
+            JSON.parse(localStorage.getItem("carts"))
+          );
+        }
+
+        const sizeButtons = document.querySelectorAll(".size-btn");
+        sizeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            sizeButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+
+        // Load pre-defined draggable images
+        for (let i = 1; i <= 22; i++) {
+          createDraggableImage(`assets/design${i}.png`, `design${i}`);
+        }
+      });
+    </script>
+  </body>
+</html>

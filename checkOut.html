@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkOut</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="all">
+      <div class="display">
+        <div class="container">
+          <p>Delivery to:</p>
+
+          <button class="add-btn" onclick="pop()">
+            <i class="fa-solid fa-location-dot" style="color: #ffffff"></i>Add
+            Address
+          </button>
+
+          <form id="form">
+            <input
+              list="countries"
+              name="country"
+              placeholder="Country"
+              id="Country"
+              required
+            />
+            <datalist id="countries"> </datalist>
+            <input
+              type="text"
+              placeholder="City"
+              name="City"
+              id="City"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Street"
+              name="Street"
+              id="Street"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Building - Name"
+              name="Building-Name"
+              id="Building-Name"
+              required
+            />
+            <input
+              list="sides"
+              name="side"
+              placeholder="Building - Side"
+              name="Building-Side"
+              id="Building-Side"
+              required
+            />
+            <datalist id="sides"> </datalist>
+          </form>
+        </div>
+        <div class="container">
+          <p>Delivery time:</p>
+          <div class="info">
+            <p class="gray">2-3 bussnies days delivery :</p>
+            <p class="black">LBP 268,500</p>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="containerr">
+          <p>Payment Method</p>
+          <div class="infoo">
+            <i
+              class="fa-sharp-duotone fa-solid fa-money-bill"
+              style="
+                --fa-primary-color: #74c0fc;
+                --fa-secondary-color: #74c0fc;
+                font-size: 35px;
+              "
+            ></i>
+            <div class="right">
+              <p class="cash">Cash On Delivery</p>
+              <p class="cashh">Cash On Delivery</p>
+            </div>
+          </div>
+        </div>
+        <div class="containerrr">
+          <div class="displayy">
+            <p class="sub">SubTotal</p>
+            <p class="sub" id="sub"></p>
+          </div>
+          <div class="displayy">
+            <p class="sub">Shipping</p>
+            <p class="sub">LBP 268,500</p>
+          </div>
+          <div class="displayy">
+            <p>TOTAL</p>
+            <p class="subb" id="total"></p>
+          </div>
+          <div class="displayy">
+            <p class="sub">Enter Coupon Code</p>
+
+            <i
+              id="i"
+              onclick="i()"
+              class="fa-solid fa-arrow-down"
+              style="color: #000000"
+            ></i>
+          </div>
+
+          <div class="with" id="width">
+            <input type="text" id="coupon" name="coupon" />
+            <div id="ii">
+              <i
+                class="fa-solid fa-arrows-rotate"
+                style="color: #000000"
+                onclick="discountt()"
+                title="Refresh"
+              ></i>
+            </div>
+            <p id="pp"></p>
+          </div>
+          <a href="index.html">
+            <button class="Add-btnn" type="submit" id="placeOrder">
+              PLACE ORDER
+            </button>
+          </a>
+
+          <p id="adddd"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="cart.js"></script>
+  </body>
+</html>
