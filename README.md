@@ -5,7 +5,7 @@ A responsive, browser-based apparel storefront and customization prototype, deve
 ## Features
 
 - **Product catalog:** browse six sample garments, filter by T-shirts or hoodies, and search by name.
-- **Interactive design studio:** pick garment type, color, one of three original vector graphics (or none), and optionally add a short custom message.
+- **Interactive Design Studio:** Customize your shirt by selecting its style and color, adding text, graphics, or imported images, and using an intuitive drag-and-drop interface to position and arrange elements freely on your design.
 - **Artwork positioning:** drag the artwork on the garment with a mouse or touchscreen; arrow keys (and Shift+arrow keys) provide keyboard positioning.
 - **Shopping bag:** add ready-made and customized pieces, change quantities, remove items, and review a calculated total.
 - **Demo order:** simulates completion and clears the local cart. **It does not accept payment or contact information.**
